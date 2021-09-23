@@ -13,3 +13,16 @@ If configurations are same as the repository ones, then curl command to retrieve
 --data-urlencode 'password=password' \
 --data-urlencode 'grant_type=password'`
 
+# Security Manager via API Gateway
+
+Now microservices can access SecurityManager through API Gateway and authenticate themselves.
+
+CURL command to obtain JWT using API Gateway:
+
+`curl --location --request POST 'http://localhost:9999/securitymanager/oauth/token' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--header 'Authorization: Basic Y2xpZW50OnNlY3JldA==' \
+--header 'Cookie: JSESSIONID=9E41DC0312213DC0467B61E45FEC5E67' \
+--data-urlencode 'username=admin@TEST01.com' \
+--data-urlencode 'password=password' \
+--data-urlencode 'grant_type=password'`
